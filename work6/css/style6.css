@@ -1,0 +1,114 @@
+/*-------для всех все сбрасываем-----------*/
+body, h1, h2, h3, h4, p, a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%; 
+    font-weight: normal;
+}
+/*--*/
+*{
+    box-sizing: border-box;
+}
+/*-----сетка1------*/
+.container{
+    display: grid;
+    /*grid-template-columns: minmax(130px, 300px);
+    grid-template-rows: 150px minmax(130px, 300px), auto;*/
+    grid-gap: 10px;
+    /**/
+    grid-template-areas:
+        "header header header"
+        "sidebar main ."
+        "footer . .";
+    padding: 10px;
+}
+.header{
+    grid-area: header;
+}
+.sidebar{
+    grid-area: sidebar;
+}
+.content{
+    grid-area: main;
+}
+.footer{
+    grid-area: footer;
+}
+/**/
+.grid-idl{
+    border: 1px solid silver;
+    border-radius: 3px;
+    background-color: rgb(125, 173, 235);
+    padding: 10px;
+}
+/*-----------------------------------------------*/
+
+/*----сетка 2----*/
+.container2 {
+    display: grid;
+    grid-template-areas: 
+            "g1 g2 g2 g2"
+            "g1 g3 g3 g4 "
+            "g1 g3 g3 g4"
+            "g5 g5 g6 g4";
+    grid-gap: 10px;
+    padding: 10px;
+}
+.grid2{
+    border: 1px solid silver;
+    border-radius: 3px;
+    padding: 10px;
+}
+.g1{
+    grid-area: g1;
+    
+}
+.g2{
+    grid-area: g2;
+}
+.g3{
+    grid-area: g3;
+}
+.g4{
+    grid-area: g4;
+}
+.g5{
+    grid-area: g5;
+}
+.g6{
+    grid-area: g6;
+}
+/*---------------------------*/
+.container3{
+    display: grid;
+    grid-template-areas: 
+                "c1 c2 c3 c4 c5"
+                "c6 c7 c7 c9 c10"
+                "c11 c12 c13 c14 c15";
+    width: 37vw;
+    margin-left: 10px;
+    padding: 10px;
+    border: 1px silver solid;
+    border-radius: 3px;
+    background-color: beige;
+}
+.circle{
+    width: 7vw;
+    height: 15vh;
+    border: 1px solid silver;
+    border-radius: 50%;
+}
+/*----*/
+
+/*div .container4 для рекурсии*/
+.cont0{
+    width: 1200px;
+    height: 900px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid silver;
+    border-radius: 3px;
+    
+}
+/*---------------*/
