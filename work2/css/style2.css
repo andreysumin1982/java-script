@@ -1,0 +1,75 @@
+/*Сброс стилей в css (CSS Reset) – это, по сути, обнуление основных свойств и атрибутов, 
+установленных браузером по умолчанию для различных элементов страницы, например, 
+окно браузера может иметь ненужные вам отступы и т.п. 
+Чтобы обнулить все заданные свойства по умолчанию, т.е. выполнить сброс стилей, 
+мы должны начать формировать наши таблицы стилей с прописывания определенного набора стилей.*/
+body, h1, h2, h3, h4, p, a {
+    margin: 0;
+    font-size: 100%; 
+    font-weight: normal;
+}
+/**/
+*{
+    box-sizing: border-box;
+}
+/*------------------------------------------*/
+
+/*---header---*/
+.header{
+    font-size: 0;
+    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);;
+    border: 1px solid rgba(20, 20, 20, 0.4);
+    padding: 10px 10px 10px 10px;
+}
+.inner-input{
+    width: 210px;
+    height: 30px; /*мин высота*/
+    /*border: 1px solid rgba(20, 20, 20, 0.4);*/
+    padding: 1px 1px 1px 1px;
+    /*box-shadow: 1px 1px 8px rgba(82, 1, 8, 0.3);*/
+    display: inline-block;
+}
+.no-right-margin{
+    margin-left: 0;
+}
+.inner-button{
+    width: 85px;
+}
+.input{
+    width: 200px;
+    height: 26px;
+    font-size: 16px;
+}
+.input-button{
+    width: 80px;
+    height: 26px;
+}
+/*------------*/
+
+/*---counter---*/
+.counter{
+    font-size: 0;
+    width:100%; /*Сократим размеры родителя*/
+    margin: 10px auto 10px auto;
+    padding: 5px 10px 5px 10px; 
+}
+.card{
+    height: 800px;
+    border: 1px solid rgba(29, 27, 27, 0.4);  
+}
+.card-text{
+    font-size: 16px;
+}
+/*-------------*/
+
+/*---footer---*/
+.footer{
+    height: 100%;
+    height: 10px;
+    background-color: rgb(61, 55, 55);
+    display: flex; /*поставить элемент по центру автоматически*/
+}
+/*------------*/
+
+
+
