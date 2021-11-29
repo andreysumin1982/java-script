@@ -35,12 +35,7 @@ body, h1, h2, h3, h4, p, a {
     padding: 10px;
     border: 1px solid silver;
 }
-/*---*/
-.cars{
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid silver;
-}
+
 /*---------------------------------*/
 .mainpost{
     display: flex;
@@ -65,12 +60,20 @@ body, h1, h2, h3, h4, p, a {
     text-decoration: solid;
 }
 /*-------------------------*/
+.inputDiv{
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid silver;
+}
+.cars{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    border: 1px solid silver;
+}
 .file{
     width: auto;
     border: 1px solid silver;
-    padding: 10px;
-}
-.fileBody{
-    font-weight: 100;
-
+    border-radius: 3px;
+    margin: 10px;
 }
