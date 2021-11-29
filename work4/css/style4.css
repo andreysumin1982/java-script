@@ -1,0 +1,122 @@
+/*Сброс стилей в css (CSS Reset) – это, по сути, обнуление основных свойств и атрибутов, 
+установленных браузером по умолчанию для различных элементов страницы, например, 
+окно браузера может иметь ненужные вам отступы и т.п. 
+Чтобы обнулить все заданные свойства по умолчанию, т.е. выполнить сброс стилей, 
+мы должны начать формировать наши таблицы стилей с прописывания определенного набора стилей.*/
+/*body, h1, h2, h3, h4, p, a {
+    margin: 0;
+    font-size: 100%; 
+    font-weight: normal;
+}
+/**/
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+/*------------------------------------------*/
+@media (min-width: 500px){
+.container{
+        padding: 10px;
+        display: flex;
+        align-items: stretch;
+        flex-direction: row;
+        justify-content:space-between;
+        flex-wrap: wrap;
+    }
+
+    .card{
+        padding: 10px;
+        border: 1px solid silver;
+        width: 15%;
+    }
+}
+.header-card{
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+.chessboard{
+    display: flex;
+    flex-wrap: wrap;   
+}
+/*-----------Светофор----------------------*/
+.sv{
+    display: flex;
+       
+}
+/*---------------------------------*/
+.svetofor{
+    width: 5%;
+    height: 24%;
+    border: 1px solid silver;
+    border-radius: 5%;
+    margin: 10px 50px 10px 50px;
+    padding: 10px;
+}
+.circle{
+    width: 3vw;
+    height: 6.5vh;
+    border-radius: 50%;
+    margin: auto;
+}
+/**/
+.red{
+    background-color:aliceblue;
+    transition: 0.1s ease;
+}
+.red:hover{
+    background-color: red;
+    box-shadow: 0 0 20px rgb(211, 123, 123);
+    transition-duration: 0ms;
+}
+/**/
+.yellow{
+    background-color:aliceblue;
+    transition: 0.1s ease;
+}
+.yellow:hover{
+    background-color: yellow;
+    box-shadow: 0 0 20px rgb(211, 224, 62);
+    transition: 0ms;
+}
+/**/
+.green{
+    background-color:aliceblue;
+    transition: 0.1s ease;
+}
+.green:hover{
+    background-color: green;
+    box-shadow: 0 0 20px rgb(110, 231, 54);
+    transition: 0ms;
+}
+/*---------------------------------------*/
+
+/*------------Светофор2-----------*/
+.svetofor2{
+    width: 5%;
+    height: 24%;
+    border: 1px solid silver;
+    border-radius: 5%;
+    margin: 10px 50px 10px 50px;
+    padding: 10px;
+}
+.circle2{
+    width: 3vw;
+    height: 6.5vh;
+    border-radius: 50%;
+    margin: auto;
+}
+.red2{
+    background-color:aliceblue;
+    transition: 0.1s ease;
+}
+.yellow2{
+    background-color:aliceblue;
+    transition: 0.1s ease;
+}
+.green2{
+    background-color:aliceblue;
+    transition: 0.1s ease;
+}
+/*--------------------------------*/
