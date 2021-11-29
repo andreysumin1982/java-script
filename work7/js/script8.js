@@ -127,36 +127,36 @@ buttons.forEach(button => {
     button.addEventListener('click', handleClick)
 })
 //------------------------------------------------------------------
-// Создать div c классом cars
-const divCars = document.createElement('div');
-    divCars.className = 'cars';
-body.appendChild(divCars)
+// Создать div c классом inputDiv
+const inputDiv = document.createElement('div');
+    inputDiv.className = 'inputDiv';
+body.appendChild(inputDiv)
 
 //Добавить кнопку "Выбрать файлы" в div с классом cars 
 const inputCars = document.createElement('input');
+    inputCars.id = 'id_file';
     inputCars.className = 'inputCars';
     inputCars.type = 'file';
     inputCars.multiple = 'true'; //позволяет выбрать множество файлов
-divCars.appendChild(inputCars);
+    inputDiv.appendChild(inputCars);
+    //inputCars.insertAdjacentElement('beforebegin', divCars);
 
-//Добавить кнопку прочитать
-const button = document.createElement('button');
-    button.className = 'btn-read'
-    button.textContent = 'Прочитать';
-divCars.appendChild(button)
+// Создать div c классом cars
+const carDiv = document.createElement('div');
+    carDiv.className = 'cars';
+body.appendChild(carDiv)
+
 
 //Ф-ция возвр. HTML div с классом file
-function handleClick3(fileName, fileSize, fileBody){
+function handleClick3(fileName){
     return `
         <div class="file">
-            <h1 class="fileName">${fileName}</h1>
-            <h2 class="fileSize">${fileSize}</h2>
-            <p class="fileBody">${fileBody}</p>
+            <image class="imageFile" src="img/${fileName}" width="150px">
         </div>
     `;
 }
-// Создать обработчик события на кнопку
-document.querySelector('.btn-read').addEventListener('click', function(){
+// Создать обработчик события на input
+document.querySelector('.inputCars').onchange = ()=> { //onchange событие выбора ф-лов
     let files = document.querySelector('.inputCars').files;
         console.log(files);
     //
@@ -169,8 +169,9 @@ document.querySelector('.btn-read').addEventListener('click', function(){
             reader.onload = () => {
                 console.log(typeof(reader.result))
                 //divCars.innerHTML = reader.result
-                divCars.innerHTML += handleClick3(files[file].name, files[file].size, reader.result)
+                carDiv.innerHTML += handleClick3(files[file].name)
         };
     }
-});
+};
 //-----------------------------------
+
