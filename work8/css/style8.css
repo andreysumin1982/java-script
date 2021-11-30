@@ -1,0 +1,20 @@
+/*Модальное окно стили*/
+/*-------для всех все сбрасываем-----------*/
+body, h1, h2, h3, h4, p, a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%; 
+    font-weight: normal;
+}
+/*--*/
+*{
+    box-sizing: border-box;
+}
+/*-----------------------------*/
+.div_image{
+    display: flex;
+    flex-wrap: wrap;
+}
+.childImage{
+    border: 1px solid silver;
+}
