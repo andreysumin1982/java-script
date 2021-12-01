@@ -1,5 +1,4 @@
-/* Модальное окно */
-
+/* Задание: создать Модальное окно */
 //
 function addStyle(element){
     element.style.width = '100%'
@@ -9,16 +8,14 @@ function addStyle(element){
     element.style.padding = '10px'
 }
 //
-function addImage(filename){
+function addImage(filename, width=150){
     // создаем div с классом childImage
     return `
         <div class="childImage">
-            <img class="imageFile" src="img/${filename}" width="150px">
+            <img class="imageFile" src="img/${filename}" name="${filename}" width="${width}px">
         </div>
     `;
 };
-//
-
 // Создаем div с классом div_btn
 let div_btn = document.createElement('div');
     div_btn.classList.add('div_btn');
@@ -36,24 +33,35 @@ let div_image = document.createElement('div');
     document.body.appendChild(div_image);
     addStyle(div_image);
 // Создаем обработчик события на кнопку "Обзор" выбор файла(ов)
-let copy_files = '';
 document.querySelector('.btn_file').onchange = function(){  // onchange 
     let files = document.querySelector('.btn_file').files;
-    copy_files = files;
-    //console.log(files);
+        //console.log(files);
         for(let index = 0; index < files.length; index++) { // бежим по массиву
             console.log(files[index].name); // имя файла
             div_image.innerHTML += addImage(files[index].name); // передаем в ф-цию addImage имя файла   
         };   
     // Создаем обработчик события (клик мыши) на картинку.
-    let imgs = document.querySelectorAll('.childImage') // достаем все элементы div c классом "childImage"
-        //console.log(imgs)
-        imgs.forEach(element =>{  // бежим по массиву
-            element.addEventListener('click', ()=>{
-                console.log(element.className) // 
-            })
-        })// 
-    };    
+    let imgs = document.querySelectorAll('.childImage') // NodeList [ div.childImage ...] достаем все элементы div c классом "childImage"
+        //console.log(imgs) // NodeList [ div.childImage ...]
+        imgs.forEach(element =>{  // бежим по массиву 
+            //console.log(element) // <div class="childImage">
+            element.addEventListener('click', ()=>{ // событие клик по элементу img
+                //console.log(element.children[0].name) // получаем имя файла
+                let modal = document.querySelector('.modal') // получаем модальное окно (div) 
+                    modal.style.display = "block" // изменяем состояние на block(блочный элемент)
+                //
+                let modalContent = document.querySelector('.modal_content') //получаем контентную часть (окно div)
+                    modalContent.innerHTML = addImage(element.children[0].name, 600) // добавляем в него картинку, передавая в  ф-цию 
+                //    
+                window.onclick = function(event){ // клик, кроме контентного окна.
+                //console.log(event) 
+                    if (event.target == modal){ // если клик по модальному окну (div .modal)
+                    modal.style.display = "none" // убираем контентное окно и изменяем состояние модального окна на "none"
+                    }
+                };
+            });            
+        });      
+};   
 //
 
 
