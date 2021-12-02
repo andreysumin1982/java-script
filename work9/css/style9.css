@@ -1,0 +1,57 @@
+/*Django + Ajax*/
+/*-------для всех все сбрасываем-----------*/
+body, h1, h2, h3, h4, p, a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%; 
+    font-weight: normal;
+}
+/*--*/
+*{
+    box-sizing: border-box;
+}
+/*Django + Ajax стили*/
+.main{
+    width: 100%;
+}
+/* Заголовок */
+.header{
+    display: flex;
+    border: 1px solid silver;
+    padding: 10px;
+}
+.divInput{
+    padding-bottom: 5px;
+}
+.text{
+    bottom: 36px;
+}
+.input{
+    width: 300px;
+    height: 30px;
+    box-shadow: 4px 4px 5px rgba(160, 155, 155, 0.4);
+    margin-top: 5px;
+}
+.divButton{
+    margin-left: 10px;
+}
+.btn{
+    width: 100px;
+    height: 30px;
+    box-shadow: 4px 4px 5px rgba(160, 155, 155, 0.4);
+    margin-top: 5px;
+}
+/* Контент */
+.content{
+    display: inline-block;
+    
+    padding: 10px;
+    overflow-y: none; /*скролл по y*/
+    scroll-behavior: smooth; /*плавная прокрутка*/
+    
+}
+.textContent{
+    line-height: 1.5;
+    bottom: 36px;
+}
+/*----------------*/
