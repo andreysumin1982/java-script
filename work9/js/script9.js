@@ -14,8 +14,8 @@ button.addEventListener('click', function(){ // привязываем ajax-за
         </div>
         `;
     };
-    //
-    function ajax(url, method){
+    // Ajax с исппользованием XMLHttpRequest (устаревший способ)
+    function ajax(url, method){ 
         /*
             Ф-ция отправляет запрос на сервер -> получает данные (json) и возвращает промис
         */
@@ -60,4 +60,21 @@ button.addEventListener('click', function(){ // привязываем ajax-за
             },30);      
         });
 })    
+/*----------*/
+
+//--ajax-запрос с использованием Jquery --------------
+
+testUrl = 'https://jsonplaceholder.typicode.com/comments'
+//
+requestData = {
+    url: testUrl,
+    
+    success: function(data){
+        console.log(data)
+    }
+}
+let ajaxRequest = $.ajax(requestData)
+ 
+    
+
 
