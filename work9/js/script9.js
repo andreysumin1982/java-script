@@ -61,12 +61,8 @@ button.addEventListener('click', function(){ // привязываем ajax-за
         });
 })    
 /*----------*/
-
 //--ajax-запрос с использованием Jquery --------------
-testUrl = 'https://jsonplaceholder.typicode.com/comments'
-//
-
-//let ajaxRequest = $.ajax(requestData)
+testUrl = 'https://jsonplaceholder.typicode.com/comments';
 //
 // Переделаем ajax-запрос с промисом, поместив в ф-цию getAjax()
 function getAjax(){
@@ -80,13 +76,19 @@ let promise = getAjax() // передаем результат в перемен
     })
 // ajax-запрос c использованием axios
 function getAjaxAxios(){
-    const promise = axios.get(testUrl);
-        return promise
+    const promise = axios.get(testUrl); // метод get
+        return promise //
 }
 let promiseAxios = getAjaxAxios();
     console.log(promiseAxios)
-    promiseAxios.then((data) =>{
+    //
+    promiseAxios.then((data) =>{ // промисы
         console.log(data.data)
-        console.log(data.headers)
-
+    })
+    promiseAxios.then((headers)=>{ // промисы
+        console.log(headers.headers)
+    })
+    promiseAxios.then((request)=>{ // промисы
+        console.log(request.request.responseURL)
+        console.log(request.request.status)
     })
