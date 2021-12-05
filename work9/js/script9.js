@@ -3,7 +3,7 @@ const URL = 'http://127.0.0.1:8000/';
 //
 
 let i =0;
-const button = document.querySelector('.btn') // находим кнопку
+let button = document.querySelector('.btn1') // находим кнопку
 button.addEventListener('click', function(){ // привязываем ajax-запрос на кнопку
     
     //
@@ -92,3 +92,24 @@ let promiseAxios = getAjaxAxios();
         console.log(request.request.responseURL)
         console.log(request.request.status)
     })
+/*---------------------------------------- */
+function clickHTML(id, email, name, body){ // ф-ция возвращает разметку HTML 
+    return `
+    <div class="post">
+        <p class="id">${id}</p>
+        <p class="email">${email}</p>
+        <p class="name">${name}</p>
+        <p class="body">${body}</p><br>
+    </div>
+    `;
+};
+button = document.querySelector('.btn2');
+button.addEventListener('click', function(){
+    const promise = $.ajax(testUrl); // пробуем jquery, axios
+        
+        promise.then((data)=>{
+                data.forEach(element =>{
+                    document.querySelector('.content').innerHTML +=clickHTML(element.id, element.email, element.name, element.body)
+                })
+        })
+})
