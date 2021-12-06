@@ -115,13 +115,21 @@ function handleClickHTML(id,element){ // ф-ция возвращает разм
     `;
 };
 //
+function addFhoto(id, title, thumbnailUrl){
+    return `
+    <div class="post" display="flex">
+        <p class="id">${id}</p>
+        <p class="title">${title}</p>
+        <img class="thumbnailUrl" src="${thumbnailUrl}">
+    </div>
+    `;
+}
+//
 function handleButton(){
     return `
-        <button class="next-content"> Далее </button>
-        
+        <button class="next-content"> Далее </button>       
         `;
-}
-
+    }
 //
 let interval = NaN // переменная для setInterval
 let buttons = document.querySelectorAll('.btn'); // jquery-test
@@ -176,8 +184,34 @@ buttons = document.querySelectorAll('.btn'); // fetch-test
             })
     });
 //
-buttons = document.querySelectorAll('.btn'); // очистить 
+buttons = document.querySelectorAll('.btn'); // jquery добавляем фото
     buttons[3].addEventListener('click', function(){
+        clearInterval(interval)   // очищаем setInterval
+        document.querySelector('.content').innerHTML = '' // очистим content
+        //
+        function addCards(id=0, count=0){
+            if (count < 5){
+                let promise = $.ajax('https://jsonplaceholder.typicode.com/photos')
+                    promise.then((data)=>{
+                        document.querySelector('.content').innerHTML += addFhoto(data[id].id, data[id].title, data[id].thumbnailUrl)
+                        id++ ; count++
+                        addCards(id, count);
+                })
+            }
+            else{ 
+                document.querySelector('.content').innerHTML += handleButton() // добавляем кнопку
+                document.querySelector('.next-content').addEventListener('click', function(){
+                    // при нажатии, удаляем кнопку и вызываем рекурсивно recur() с параметрами.  
+                    document.querySelector('.next-content').remove() // удаляем кнопку
+                    addCards(id, count = 0); // рекурсия , обнуляем count
+                })
+            }
+        }; addCards(0, 0); // Вызываем ф-цию на клик мыши
+    });
+
+//
+buttons = document.querySelectorAll('.btn'); // очистить 
+    buttons[4].addEventListener('click', function(){
         clearInterval(interval)   // очищаем setInterval     
         document.querySelector('.content').innerHTML = ''; // очистить
     });
