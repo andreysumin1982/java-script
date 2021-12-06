@@ -17,7 +17,7 @@ body, h1, h2, h3, h4, p, a {
 /* Заголовок */
 .header{
     display: flex;
-    border: 1px solid silver;
+    border: 0.5px solid silver;
     padding: 10px;
 }
 .divInput{
@@ -41,17 +41,32 @@ body, h1, h2, h3, h4, p, a {
     box-shadow: 4px 4px 5px rgba(160, 155, 155, 0.4);
     margin-top: 5px;
 }
+
 /* Контент */
 .content{
-    display: inline-block;
-    
-    padding: 10px;
+    padding: 5px;
     overflow-y: none; /*скролл по y*/
     scroll-behavior: smooth; /*плавная прокрутка*/
-    
 }
+.post{
+    border: 0.5px solid silver;
+    border-radius: 3px;
+    padding: 2px;
+    margin-bottom: 3px;
+}
+.post:hover{
+    background-color: antiquewhite;
+}
+
 .textContent{
     line-height: 1.5;
     bottom: 36px;
+}
+.next-content{
+    width: 15%;
+    margin-left: 25%;
+}
+.next-content:hover{
+    box-shadow: 0px 0px 4px 4px rgba(160, 155, 155, 0.4);
 }
 /*----------------*/
