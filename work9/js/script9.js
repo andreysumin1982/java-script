@@ -2,9 +2,10 @@
 const URL = 'http://127.0.0.1:8000/';
 //
 
+/*
 let i =0;
-let button = document.querySelector('.btn1') // находим кнопку
-button.addEventListener('click', function(){ // привязываем ajax-запрос на кнопку
+let buttons = document.querySelectorAll('.btn') // находим кнопку
+    buttons[0].addEventListener('click', function(){ // привязываем ajax-запрос на кнопку
     
     //
     function handleClickHTML(element){ // ф-ция возвращает разметку HTML 
@@ -20,6 +21,7 @@ button.addEventListener('click', function(){ // привязываем ajax-за
             Ф-ция отправляет запрос на сервер -> получает данные (json) и возвращает промис
         */
         // создаем промис 
+        /*
         return new Promise((resolve, reject) => {
         // Создаем экземпляр класса XMLHttpRequest (констроуктор)
             const xhr = new XMLHttpRequest()
@@ -72,14 +74,14 @@ function getAjax(){
 //
 let promise = getAjax() // передаем результат в переменную и работаем с промисом (then)
     promise.then((data) => {
-        console.log('data')
+        console.log('>>')
     })
 // ajax-запрос c использованием axios
 function getAjaxAxios(){
     const promise = axios.get(testUrl); // метод get
         return promise //
 }
-let promiseAxios = getAjaxAxios();
+/*let promiseAxios = getAjaxAxios();
     console.log(promiseAxios)
     //
     promiseAxios.then((data) =>{ // промисы
@@ -93,6 +95,7 @@ let promiseAxios = getAjaxAxios();
         console.log(request.request.status)
     })
 /*---------------------------------------- */
+//
 function clickHTML(id, email, name, body){ // ф-ция возвращает разметку HTML 
     return `
     <div class="post">
@@ -103,13 +106,79 @@ function clickHTML(id, email, name, body){ // ф-ция возвращает р�
     </div>
     `;
 };
-button = document.querySelector('.btn2');
-button.addEventListener('click', function(){
-    const promise = $.ajax(testUrl); // пробуем jquery, axios
+//
+function handleClickHTML(id,element){ // ф-ция возвращает разметку HTML для syslog
+    return `
+    <div class="post">
+        <p class="textContent">${id}: ${element}</p>
+    </div>
+    `;
+};
+//
+function handleButton(){
+    return `
+        <button class="next-content"> Далее </button>
         
+        `;
+}
+
+//
+let interval = NaN // переменная для setInterval
+let buttons = document.querySelectorAll('.btn'); // jquery-test
+    buttons[0].addEventListener('click', function(){
+        //
+        document.querySelector('.content').innerHTML = '' // очистим content
+        const promise = $.ajax(URL); // пробуем jquery
         promise.then((data)=>{
-                data.forEach(element =>{
-                    document.querySelector('.content').innerHTML +=clickHTML(element.id, element.email, element.name, element.body)
-                })
-        })
-})
+            //
+            function recur(id = 0, count=0) { 
+                if (count < 10){                  
+                    document.querySelector('.content').innerHTML += handleClickHTML(id, data['syslog'][id]);
+                    id++; count++; 
+                    recur(id, count) //
+                }
+                else{
+                    document.querySelector('.content').innerHTML += handleButton() // добавляем кнопку
+                    document.querySelector('.next-content').addEventListener('click', function(){ 
+                        // при нажатии, удаляем кнопку и вызываем рекурсивно recur() с параметрами.  
+                        document.querySelector('.next-content').remove() // удаляем кнопку
+                        recur(id, count = 0); // 
+                    })
+                }
+            }; recur(0)   
+        });
+    });
+//
+buttons = document.querySelectorAll('.btn'); // axios-test2
+    buttons[1].addEventListener('click', function(){
+        document.querySelector('.content').innerHTML = '' // очистим content
+        const promise = axios.get(testUrl); // пробуем  axios
+        let id = 0;
+        promise.then((data)=>{
+            data.data.forEach(element =>{
+                if (id < 5){
+                    document.querySelector('.content').innerHTML += clickHTML(element.id, element.email, element.name, element.body)
+                    id++
+                }
+                else{return};
+            });            
+        });
+    });
+//
+buttons = document.querySelectorAll('.btn'); // fetch-test
+    buttons[2].addEventListener('click', function(){
+        //
+        document.querySelector('.content').innerHTML = '' // очистим content
+        const promise = fetch('https://jsonplaceholder.typicode.com/todos'); // пробуем fetch
+            //
+            promise.then((response) => {
+                console.log(response.json())
+            })
+    });
+//
+buttons = document.querySelectorAll('.btn'); // очистить 
+    buttons[3].addEventListener('click', function(){
+        clearInterval(interval)   // очищаем setInterval     
+        document.querySelector('.content').innerHTML = ''; // очистить
+    });
+//
