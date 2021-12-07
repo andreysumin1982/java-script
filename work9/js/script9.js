@@ -117,8 +117,8 @@ function handleClickHTML(id,element){ // ф-ция возвращает разм
 //
 function addFhoto(id, title, thumbnailUrl){
     return `
-    <div class="post" display="flex">
-        <p class="id">${id}</p>
+    <div id="anchor${id}" class="post${id}">
+        <p class="p">${id}</p>
         <p class="title">${title}</p>
         <img class="thumbnailUrl" src="${thumbnailUrl}">
     </div>
@@ -190,19 +190,23 @@ buttons = document.querySelectorAll('.btn'); // jquery добавляем фот
         document.querySelector('.content').innerHTML = '' // очистим content
         //
         function addCards(id=0, count=0){
-            if (count < 5){
+            if (count < 3){
                 let promise = $.ajax('https://jsonplaceholder.typicode.com/photos')
                     promise.then((data)=>{
                         document.querySelector('.content').innerHTML += addFhoto(data[id].id, data[id].title, data[id].thumbnailUrl)
-                        id++ ; count++
+                        id++;  count++;
                         addCards(id, count);
-                })
-            }
-            else{ 
+                }); 
+            } 
+            else{  
+                window.location.href = `http://127.0.0.1:5500/work9.html#anchor${id}`
+                //
                 document.querySelector('.content').innerHTML += handleButton() // добавляем кнопку
-                document.querySelector('.next-content').addEventListener('click', function(){
+                document.querySelector('.next-content').addEventListener('click', function(){ 
+                    
                     // при нажатии, удаляем кнопку и вызываем рекурсивно recur() с параметрами.  
                     document.querySelector('.next-content').remove() // удаляем кнопку
+                    
                     addCards(id, count = 0); // рекурсия , обнуляем count
                 })
             }
