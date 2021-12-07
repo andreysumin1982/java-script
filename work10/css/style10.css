@@ -1,0 +1,39 @@
+/*Стили для GET/POST - Запросов*/
+/*-------для всех все сбрасываем-----------*/
+body, h1, h2, h3, h4, p, a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%; 
+    font-weight: normal;
+}
+/*--*/
+*{
+    box-sizing: border-box;
+}
+/*-----------------------------------------*/
+.header{
+    display: flex;
+    padding: 10px;
+    border: 1px solid silver;
+}
+/**/
+.div-input{
+    padding: 5px;
+}
+.input{
+
+}
+/*--*/
+.div-button{
+    padding: 5px;
+}
+.btn{
+
+}
+/*--*/
+.content{
+    display: flex;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid silver;
+}
