@@ -55,7 +55,8 @@ body, h1, h2, h3, h4, p, a {
     margin-bottom: 3px;
 }
 .post:hover{
-    background-color: antiquewhite;
+    background-color: rgb(240, 232, 221);
+    box-shadow: 4px 4px 4px rgba(160, 155, 155, 0.4);
 }
 
 .textContent{
