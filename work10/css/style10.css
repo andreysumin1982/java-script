@@ -13,26 +13,33 @@ body, h1, h2, h3, h4, p, a {
 /*-----------------------------------------*/
 .header{
     display: flex;
-    padding: 10px;
     border: 1px solid silver;
+    width: 100%;
 }
 /**/
 .div-input{
     padding: 5px;
+    
 }
 .input{
 
 }
+.text-input{
+    margin-bottom: 5px;
+    font-size: 15px;
+}
 /*--*/
 .div-button{
     padding: 5px;
+    
 }
 .btn{
-
+    margin-top: 23px;
 }
 /*--*/
 .content{
     display: flex;
+    width: 100%;
     padding: 10px;
     margin-top: 10px;
     border: 1px solid silver;
