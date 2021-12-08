@@ -10,20 +10,68 @@ function addElement(child, parent = 'body', classChild = 'childBody', type = NaN
         childElement.type = type
         childElement.className = classChild
     document.querySelector(parent).appendChild(childElement)
-}
+};
+//
+function findElement(className){
+    /*Ф-ция находит эдементы на странице по классу и
+        возвращает массив элементов. 
+    */
+    return document.querySelectorAll(className) //массив объектов
+};
 //
 addElement('header', 'body', 'header'); // создаем заголовок
-addElement('div', '.header', 'div-input', '') // создаем контейнер для поля ввода
-addElement('p', '.div-input', 'text-input') // Создаем текст над полем ввода
-addElement('input', '.div-input', 'input', 'search') // создаем поле ввода
-addElement('div', '.header', 'div-button', '') // создаем контейнер для кнопки
-addElement('button', '.div-button', 'btn', '') // создаем кнопку
-addElement('section', 'body', 'content') // создаем контейнер для вывода контента
 //
-document.querySelector('.text-input').innerHTML = 'GET/POST Запрос'
-document.querySelector('.btn').innerHTML = 'Отправить'; // создаем надпись на кнопке
+addElement('div', '.header', 'div-input1', ''); // создаем контейнер для поля ввода
+addElement('p', '.div-input1', 'text-input1'); // Создаем текст над полем ввода
+addElement('input', '.div-input1', 'input', 'search'); // создаем поле ввода 1
 //
-/* Обработчики событий на кнопку */
+addElement('div', '.header', 'div-input2', ''); // создаем контейнер для поля ввода
+addElement('p', '.div-input2', 'text-input2'); // Создаем текст над полем ввода
+addElement('input', '.div-input2', 'input', 'search'); // создаем поле ввода 1
 //
+addElement('div', '.header', 'div-button', ''); // создаем контейнер для кнопки
+addElement('button', '.div-button', 'btn', '');// создаем кнопку 1
+addElement('button', '.div-button', 'btn', ''); // создаем кнопку 2
+addElement('button', '.div-button', 'btn', ''); // создаем кнопку 3
+//
+addElement('section', 'body', 'content'); // создаем контейнер для вывода контента
+//
+document.querySelector('.text-input1').innerHTML = 'Имя';
+document.querySelector('.text-input2').innerHTML = 'Коментарий';
+
+/* Обработчики событий на кнопки */
+findElement('.btn').forEach((button, index) => { // бежим по массиву
+    switch(index) {
+        case 0:{
+            button.innerHTML = 'Отправить' // название
+            button.addEventListener('click', function(){
+                findElement('.input').forEach(input => { // Очищаем поля ввода
+                    input.value = '';
+                })
+                //
+                findElement('.content')[0].innerHTML += 'Отправить'+'<br>' //  тест
+            })
+        }; break; //
+        case 1:{
+            button.innerHTML = 'Показать' // название
+            button.addEventListener('click', function(){
+                //
+                console.log(getTasks())
+                //findElement('.content')[0].innerHTML = getTasks()
+                //findElement('.content')[0].innerHTML += 'Показать таски'+'<br>' //  тест
+            })
+        }; break; //
+        case 2:{
+            button.innerHTML = 'Очистить' // название
+            button.addEventListener('click', function(){
+                findElement('.content')[0].innerHTML = '' // очистить весь контент
+                findElement('.input').forEach(input => {
+                    input.value = '';
+                })  
+            })
+        }; break; //
+    }
+});
+
 
 
