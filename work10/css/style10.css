@@ -1,6 +1,6 @@
 /*Стили для GET/POST - Запросов*/
 /*-------для всех все сбрасываем-----------*/
-body, h1, h2, h3, h4, p, a {
+body, button, h1, h2, h3, h4, p, a {
     margin: 0;
     padding: 0;
     font-size: 100%; 
@@ -16,25 +16,35 @@ body, h1, h2, h3, h4, p, a {
     border: 1px solid silver;
     width: 100%;
 }
-/**/
-.div-input{
-    padding: 5px;
-    
+/*--*/
+.div-input1{
+    padding: 10px;
+}
+.text-input1{
+    bottom: 36px;
+}
+/*--*/
+.div-input2{
+    padding: 10px;
+}
+.text-input2{
+    bottom: 36px;
 }
 .input{
-
-}
-.text-input{
-    margin-bottom: 5px;
-    font-size: 15px;
+    display:inline;
+    width: 200px;
+    height: 30px;
 }
 /*--*/
 .div-button{
-    padding: 5px;
-    
+    display: flex;
+    width: 100%;
+    padding-top: 30px;
 }
 .btn{
-    margin-top: 23px;
+    width: 8%;
+    height: 30px;
+    margin-right: 10px;
 }
 /*--*/
 .content{
@@ -44,3 +54,4 @@ body, h1, h2, h3, h4, p, a {
     margin-top: 10px;
     border: 1px solid silver;
 }
+/*--*/
