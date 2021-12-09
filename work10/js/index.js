@@ -23,6 +23,7 @@ function findElement(className){
 // Обработчик промисов и вывод рузельтатов
 function dataPromise(data){
     console.log(data)
+    console.log(data.data)
     if (Array.isArray(data.data)){
         data.data.forEach(element =>{
             //console.log(element.id)
@@ -66,12 +67,19 @@ findElement('.btn').forEach((button, index) => { // бежим по массив
         case 0:{
             button.innerHTML = 'Отправить' // название
             button.addEventListener('click', function(){
-                findElement('.input').forEach(input => { // Очищаем поля ввода
-                    input.value = '';
+                //findElement('.content')[0].innerHTML = '' // очистить весь контент
+                let name = ''       // значения полей ввода
+                let comments = ''   // значения полей ввода
+                findElement('.input').forEach((input, index) => { 
+                    if (index == 0) { name = findElement('.input')[index]} // Заносим в переменные значения полей ввода
+                    else{comments = findElement('.input')[index]}
                 })
-               const promise = createTasks(1, 'Test', 'POST-request')  // получен промис из ф-ции
+                const promise = createTasks(1, name.value, comments.value)  // получаем промис из ф-ции
                     promise.then(dataPromise)
-            
+                    //
+                    findElement('.input').forEach(input => { // Очищаем поля ввода
+                        input.value = '';
+                    })  
             })      
         
         }; break; //
