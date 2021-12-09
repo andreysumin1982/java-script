@@ -12,14 +12,12 @@ function getTasks(){
 //Ф-ция createTasks. Создаем таски
 function createTasks(id, title, body){
     const promise = axios.post(urlCreateTasks, {
-        body: JSON.stringify({
+        
             userId: id,
             title : title,
             body: body,
-        }),
-        headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-          },  
-    })
+        });
+        
+    
     return promise
 }
