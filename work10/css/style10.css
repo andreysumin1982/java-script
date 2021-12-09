@@ -32,7 +32,7 @@ body, button, h1, h2, h3, h4, p, a {
 }
 .input{
     display:inline;
-    width: 200px;
+    width: 150px;
     height: 30px;
 }
 /*--*/
@@ -49,9 +49,24 @@ body, button, h1, h2, h3, h4, p, a {
 /*--*/
 .content{
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
-    padding: 10px;
+    
     margin-top: 10px;
     border: 1px solid silver;
 }
 /*--*/
+.dataPromise{
+    border: 1px solid silver;
+    flex: 1 1 25%;
+    padding: 10px;
+}
+.text-id{
+
+}
+.text-title{
+
+}
+.text-body{
+
+}
