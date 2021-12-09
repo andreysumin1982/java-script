@@ -1,6 +1,6 @@
 /*Создание элементов на странице для GET/POST - Запросов*/
 //
-function addElement(child, parent = 'body', classChild = 'childBody', type = NaN){
+function addElement(child, parent = 'body', classChild = 'childBody', type = NaN, text = ''){
     /*Ф-ция создает элемент на странице:
         На вход подаются 1 обязятельный элемент и 3 не обязательных:
      Дочерний (div, p, li ...), класс для дочернего элемента , родительский элемент - ('.classname'), тип дочернего элемента.
@@ -9,6 +9,7 @@ function addElement(child, parent = 'body', classChild = 'childBody', type = NaN
     let childElement = document.createElement(child)
         childElement.type = type
         childElement.className = classChild
+        childElement.innerHTML = text
     document.querySelector(parent).appendChild(childElement)
 };
 //
@@ -18,6 +19,26 @@ function findElement(className){
     */
     return document.querySelectorAll(className) //массив объектов
 };
+//
+// Обработчик промисов и вывод рузельтатов
+function dataPromise(data){
+    console.log(data)
+    if (Array.isArray(data.data)){
+        data.data.forEach(element =>{
+            //console.log(element.id)
+            result(element.id, element.title, element.body)
+        })
+    }
+    else{ result(data.data.id, data.data.title, data.data.body) };
+};
+// Ф-ция рисует результаты в div .content
+function result(id ,title, body){
+    findElement('.content')[0].innerHTML += `<div class="dataPromise"> 
+                                                <p class="text-id">${id}</p> 
+                                                <p class="text-title">${title}</p>
+                                                <p class="text-body">${body}</p>
+                                            </div>`;
+}
 //
 addElement('header', 'body', 'header'); // создаем заголовок
 //
@@ -38,7 +59,7 @@ addElement('section', 'body', 'content'); // создаем контейнер �
 //
 document.querySelector('.text-input1').innerHTML = 'Имя';
 document.querySelector('.text-input2').innerHTML = 'Коментарий';
-
+//
 /* Обработчики событий на кнопки */
 findElement('.btn').forEach((button, index) => { // бежим по массиву
     switch(index) {
@@ -48,17 +69,19 @@ findElement('.btn').forEach((button, index) => { // бежим по массив
                 findElement('.input').forEach(input => { // Очищаем поля ввода
                     input.value = '';
                 })
-                //
-                findElement('.content')[0].innerHTML += 'Отправить'+'<br>' //  тест
-            })
+               const promise = createTasks(1, 'Test', 'POST-request')  // получен промис из ф-ции
+                    promise.then(dataPromise)
+            
+            })      
+        
         }; break; //
         case 1:{
             button.innerHTML = 'Показать' // название
             button.addEventListener('click', function(){
-                //
-                console.log(getTasks())
-                //findElement('.content')[0].innerHTML = getTasks()
-                //findElement('.content')[0].innerHTML += 'Показать таски'+'<br>' //  тест
+                findElement('.content')[0].innerHTML = '' // очистить весь контент
+                //console.log(getTasks())
+                const promise = getTasks()  // получен промис из ф-ции
+                    promise.then(dataPromise) // работаем с промисом, передаем его в ф-цию(обработчик промисов)           
             })
         }; break; //
         case 2:{
@@ -72,6 +95,5 @@ findElement('.btn').forEach((button, index) => { // бежим по массив
         }; break; //
     }
 });
-
 
 
