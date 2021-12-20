@@ -1,0 +1,27 @@
+/*-------для всех все сбрасываем-----------*/
+body, button, h1, h2, h3, h4, p, a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%; 
+    font-weight: normal;
+}
+/*--*/
+*{
+    box-sizing: border-box;
+}
+/*---*/
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    border: 1px solid silver;
+    width: 50%;
+    padding: 10px;
+    margin: auto;
+}
+.weather{
+    flex: 1 1 40%;
+    width: 50%;
+    border: 1px solid silver;
+    padding: 10px;
+}
