@@ -1,0 +1,42 @@
+/*---Очищаем сбрасываем все ---
+body, h1, h2, h3, h4, p, a {
+    margin: 0;
+    font-size: 100%; 
+    font-weight: normal;
+}
+*/
+*{
+    box-sizing: border-box;
+}
+/*---*/
+.content{
+    display: grid;
+    grid-template-columns:1fr; /*1 столбeц шириной 50%*/
+    grid-column-gap: 5px ; /*отступы столбцов*/
+    grid-row-gap: 5px ; /*отступы строк*/
+}
+.grid-itm{
+    width: 100%;
+    height: 40vh;
+    border: 1px solid silver;
+    border-radius: 3px;
+    padding: 10px;
+}
+/*Медиа-запрос при мин.разрешении 320px строить 2 столбца*/
+@media screen and (min-width: 320px){
+    .content{
+        display: grid;
+        grid-template-columns:1fr 1fr; /*Столбцы 2 столбца шириной 50%*/
+        grid-column-gap: 5px; /*отступы столбцов*/
+        grid-row-gap: 5px; /*отступы строк*/
+    }
+}
+/*Медиа-запрос при мин.разрешении 800px строить 3 столбца*/
+@media screen and (min-width: 800px){
+    .content{
+        display: grid;
+        grid-template-columns:1fr 1fr 1fr; /*Столбцы 3 столбца шириной 50%*/
+        grid-column-gap: 5px; /*отступы столбцов*/
+        grid-row-gap: 5px; /*отступы строк*/    
+    }
+}

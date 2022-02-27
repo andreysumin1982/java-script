@@ -1,0 +1,42 @@
+/*-------для всех все сбрасываем-----------*/
+body, h1, h2, h3, h4, p, a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%; 
+    font-weight: normal;
+}
+/*--*/
+*{
+    box-sizing: border-box;
+}
+/*------родительский div для размещения картинок---------*/
+.div_image{
+    display: flex;
+    flex-wrap: wrap;
+}
+/*----Дочерний div картинки */
+.childImage{
+    margin: 0 10px 0 0;
+}
+/*--------------Модальное окно: стили----------------*/
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(46, 45, 45, 0.6);
+    overflow: auto;
+}
+/*----Контентная часть окна: -----*/
+.modal_content{
+    width: 600px;
+    z-index: 99999;
+    margin: 5% auto;
+}
+/*------------------*/
+
+
+

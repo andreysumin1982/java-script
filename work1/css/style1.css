@@ -1,0 +1,85 @@
+/*Сброс стилей в css (CSS Reset) – это, по сути, обнуление основных свойств и атрибутов, 
+установленных браузером по умолчанию для различных элементов страницы, например, 
+окно браузера может иметь ненужные вам отступы и т.п. 
+Чтобы обнулить все заданные свойства по умолчанию, т.е. выполнить сброс стилей, 
+мы должны начать формировать наши таблицы стилей с прописывания определенного набора стилей.*/
+body, h1, h2, h3, h4, p, a {
+    margin: 0;
+    font-size: 100%; 
+    font-weight: normal;
+}
+/**/
+*{
+    box-sizing: border-box;
+}
+/*---------header----------------------------------------*/
+.header {
+    /*margin-bottom: 10px; /*отступ в 10 px под header*/
+    border: 1px solid rgba(20, 20, 20, 0.4);  
+}
+
+.inner-header{
+    background-color: beige;
+    width: 100%;
+    height: 150px; /*мин высота*/
+    display: flex;
+}
+
+.inner-text{
+    font-size: 20px;
+    font-weight: 500;
+    margin: auto;
+}
+/*-------------------------------------------*/
+
+/*-----------content-------------------*/
+.content{
+    font-size: 0;
+    /*background-color:#8aafcf; /*Подсвечиваем родительский класс*/
+    width:95%; /*Сократим размеры родителя*/
+    border: 1px solid rgba(250, 50, 50, .4);
+    margin: 50px auto 50px auto; /*Поставит элемент section в центр экрана, отступы св 50 и сн 50, лев. прав auto*/
+    padding:  10px 10px 10px 10px; /*Внутр. отступы от всех краев для дочерних эл.*/
+}
+/*---------------------------------------*/
+
+/*-------------card------------------------*/
+.card{
+    width: 50%;
+    height: 400px;
+    border: 1px solid rgba(29, 27, 27, 0.4);
+    padding: 30px 30px 30px 30px; /*отступы для текста*/
+    display: inline-block;
+}
+.no-right-margin{
+    margin-right: 0;
+}
+.card-text{
+    font-size: 16px;
+}
+.card-color1{
+    background-color: azure;
+}
+.card-color2{
+    background-color: aquamarine;
+}
+.card-color3{
+    background-color: antiquewhite;   
+}
+.card-color4{
+    background-color: cadetblue;
+}
+/*-----------------------------------------*/
+
+/*-----footer---------*/
+.footer{
+    height: 100px;
+    background-color: rgb(61, 55, 55);
+    display: flex; /*поставить элемент по центру автоматически*/
+  }
+.footer-text{
+    color: white;
+    font-size: 30px;
+    margin: auto; /*внутри него (display:flex) margin: auto работает не только по горизонтали!*/
+  }
+/*--------------------*/
