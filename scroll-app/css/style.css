@@ -1,0 +1,122 @@
+/*-------для всех все сбрасываем-----------*/
+body, button, h1, h2, h3, h4, p, a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    font-weight: normal;
+}
+/*--*/
+*{
+    box-sizing: border-box;
+}
+/**/
+body{
+    display: grid;
+    gap: 10px;
+    /**/
+    grid-template-areas: 
+        "content1 content2 content3 content4"
+        "indications1 indications2 indications3 indications4";    
+    grid-template-columns:  300px 300px 300px 300px;
+    padding: 10px;
+}
+.content1{
+    grid-area: content1;
+}
+.content2{
+    grid-area: content2;
+}
+.content3{
+    grid-area: content3;
+}
+.content4{
+    grid-area: content4;
+}
+.indications1{
+    grid-area: indications1;
+}
+.indications2{
+    grid-area: indications2;
+}
+.indications3{
+    grid-area: indications3;
+}
+.indications3{
+    grid-area: indications3;
+}
+/**/
+.content1{
+    width: 300px;
+    height: 200px;
+    border: 1px solid silver;
+    border-radius: 10px;
+    padding: 5px;
+    /*margin: 3px auto;*/
+    font-size: 22px;
+    font-weight: 300;
+    opacity: 0.8;
+    overflow: auto;
+}
+.content2{
+    width: 300px;
+    height: 200px;
+    border: 1px solid silver;
+    border-radius: 10px;
+    padding: 5px;
+    /*margin: 3px auto;*/
+    font-weight: 300;
+    opacity: 0.8;
+    overflow: auto;
+}
+.content3{
+    width: 300px;
+    height: 200px;
+    border: 1px solid silver;
+    border-radius: 10px;
+    padding: 5px;
+    /*margin: 3px auto;*/
+    font-size: 20px;
+    font-weight: 300;
+    opacity: 0.8;
+    overflow: auto;
+}
+.content4{
+    width: 300px;
+    height: 200px;
+    border: 1px solid silver;
+    border-radius: 10px;
+    padding: 5px;
+    /*margin: 3px auto;*/
+    font-weight: 300;
+    opacity: 0.8;
+    overflow: auto;
+}
+
+.indications1{
+    border: 1px solid silver;
+    border-radius: 10px;
+    width: 300px;
+    height: 100px;
+    padding: 5px;   
+}
+.indications2{
+    border: 1px solid silver;
+    border-radius: 10px;
+    width: 300px;
+    height: 100px;
+    padding: 5px;   
+}
+.indications3{
+    border: 1px solid silver;
+    border-radius: 10px;
+    width: 300px;
+    height: 100px;
+    padding: 5px;   
+}
+.indications4{
+    border: 1px solid silver;
+    border-radius: 10px;
+    width: 300px;
+    height: 100px;
+    padding: 5px;   
+}
