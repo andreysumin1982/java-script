@@ -15,9 +15,9 @@ body{
     gap: 10px;
     /**/
     grid-template-areas: 
-        "content1 content2 content3 content4"
-        "indications1 indications2 indications3 indications4";    
-    grid-template-columns:  300px 300px 300px 300px;
+        "content1 content2"
+        "indications1 indications2";    
+    grid-template-columns:  300px 300px;
     padding: 10px;
 }
 .content1{
@@ -26,23 +26,12 @@ body{
 .content2{
     grid-area: content2;
 }
-.content3{
-    grid-area: content3;
-}
-.content4{
-    grid-area: content4;
-}
+
 .indications1{
     grid-area: indications1;
 }
 .indications2{
     grid-area: indications2;
-}
-.indications3{
-    grid-area: indications3;
-}
-.indications3{
-    grid-area: indications3;
 }
 /**/
 .content1{
@@ -68,55 +57,21 @@ body{
     opacity: 0.8;
     overflow: auto;
 }
-.content3{
-    width: 300px;
-    height: 200px;
-    border: 1px solid silver;
-    border-radius: 10px;
-    padding: 5px;
-    /*margin: 3px auto;*/
-    font-size: 20px;
-    font-weight: 300;
-    opacity: 0.8;
-    overflow: auto;
-}
-.content4{
-    width: 300px;
-    height: 200px;
-    border: 1px solid silver;
-    border-radius: 10px;
-    padding: 5px;
-    /*margin: 3px auto;*/
-    font-weight: 300;
-    opacity: 0.8;
-    overflow: auto;
-}
 
 .indications1{
     border: 1px solid silver;
     border-radius: 10px;
     width: 300px;
     height: 100px;
-    padding: 5px;   
+    padding: 5px;
+    overflow: auto;   
 }
 .indications2{
     border: 1px solid silver;
     border-radius: 10px;
     width: 300px;
     height: 100px;
-    padding: 5px;   
+    padding: 5px;  
+    overflow: auto; 
 }
-.indications3{
-    border: 1px solid silver;
-    border-radius: 10px;
-    width: 300px;
-    height: 100px;
-    padding: 5px;   
-}
-.indications4{
-    border: 1px solid silver;
-    border-radius: 10px;
-    width: 300px;
-    height: 100px;
-    padding: 5px;   
-}
+/**/
