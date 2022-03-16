@@ -1,5 +1,5 @@
-import MyPosts from "./MyPosts/MyPosts";
-import p from"./Profile.module.css";
+import MyPosts from "./MyPosts/MyPosts.jsx"; // Импортируем MyPosts.jsx
+import p from"./Profile.module.css"; // Импортируем модель css
 
 // Создаем компоненту Profile
 const Profile = () => {

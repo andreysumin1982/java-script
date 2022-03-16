@@ -10,9 +10,9 @@ const MyPosts = () => {
                 <button>Add</button>
             </div>
             
-            <Post />
-            <Post />
-            <Post />
+            <Post message = 'dsfgadfgadfg'/>
+            <Post message = 'вафвафвамфваымфыва'/>
+            <Post message = 'tzd    asdasdas'/>
         </div>
     );
 }
