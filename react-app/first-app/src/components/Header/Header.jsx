@@ -1,7 +1,9 @@
+import h from "./Header.module.css";
+
 // Создаем компоненту Header
 const Header = () =>{
     return (
-        <header className='header'>
+        <header className={h.header}>
             Header
         </header>
     );

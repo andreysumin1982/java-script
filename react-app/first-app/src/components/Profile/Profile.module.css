@@ -1,0 +1,10 @@
+.content{
+    grid-area: c;
+    background-color: antiquewhite;
+  }
+.content img { /*Картинка для блока content*/ 
+    width: 800px;
+  }
+.item{
+    color: chartreuse;
+  }

@@ -1,0 +1,8 @@
+/*Стили для Nav*/
+.nav{
+    grid-area: n;
+    background-color: coral;
+  }
+.item{
+  color: white;
+}
