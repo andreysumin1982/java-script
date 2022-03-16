@@ -1,20 +1,22 @@
+import n from "./Nav.module.css";
+
 // Создаем компоненту Nav
 const Nav = () => {
     return (
-        <nav className='nav'>
-            <div>
+        <nav className={n.nav}>
+            <div className={n.item}>
                 <a>Profile</a>
             </div>
-            <div>
+            <div className={n.item}>
                 <a>Messages</a>
             </div>
-            <div>
+            <div className={n.item}>
                 <a>News</a>
             </div>
-            <div>
+            <div className={n.item}>
                 <a>Music</a>
             </div>
-            <div>
+            <div className={n.item}>
                 <a>Setting</a>
             </div>
         </nav>

@@ -11,7 +11,7 @@ body, button, h1, h2, h3, h4, p, a {
 }
 /* Обертка */
 .app-wrapper{
-  width: 1800px;
+  width: 90%;
   margin: 10px auto;
   /**/
   display: grid;
@@ -23,21 +23,7 @@ body, button, h1, h2, h3, h4, p, a {
   grid-template-columns: 2fr 10fr;
   gap: 10px;
 }
-.header{
-  grid-area: h;
-  background-color: aqua;
-}
-.nav{
-  grid-area: n;
-  background-color: coral;
-}
-.content{
-  grid-area: c;
-  background-color: antiquewhite;
-}
-.content img { /*Картинка для блока content*/ 
-  width: 800px;
-}
+
 /**/
 
 
