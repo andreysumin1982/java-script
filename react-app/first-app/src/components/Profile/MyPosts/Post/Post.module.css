@@ -1,0 +1,13 @@
+.item{
+    color:brown;
+}
+
+.item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+}
+
+.item span:hover{
+    color: blue;
+}
