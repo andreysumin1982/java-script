@@ -3,16 +3,26 @@ import './App.css';
 import Header from './components/Header/Header.jsx';
 import Nav from './components/Nav/Nav.jsx';
 import Profile from './components/Profile/Profile.jsx';
+import Dialogs from './components/Dialogs/Dialogs.jsx';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 function App() {
-  // Верска GRID в одной компоненте 
+  //
   return (
-    <div className='app-wrapper'>
-      <Header />
-      <Nav />
-      <Profile />
-    </div>
-  );
+   <BrowserRouter>
+      <div className='app-wrapper'>
+        <Header />
+        <Nav />
+        <Route path="/dialogs">
+           
+          </Route>
+          <Profile />
+         
+          
+        
+      </div>
+   </BrowserRouter>   
+  )
 }
 //
 export default App;
