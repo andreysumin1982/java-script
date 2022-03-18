@@ -1,0 +1,6 @@
+.content{
+  grid-area: c;
+  background-color: rgb(175, 173, 170);
+  height: 500px;
+  border-radius: 20px;
+}
