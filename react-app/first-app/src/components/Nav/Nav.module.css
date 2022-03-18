@@ -2,7 +2,11 @@
 .nav{
     grid-area: n;
     background-color: coral;
+    border-radius: 20px;
   }
 .item{
   color: white;
+}
+.links:hover{
+  color: black;
 }

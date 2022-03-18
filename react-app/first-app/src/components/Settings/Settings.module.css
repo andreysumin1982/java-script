@@ -1,0 +1,9 @@
+.content{
+  grid-area: c;
+  background-color: rgb(134, 169, 235);
+  height: 300px;
+  border-radius: 20px;
+}
+.fontContent{
+  font-size: 40px;
+}

@@ -1,8 +1,12 @@
 .content{
     grid-area: c;
-    background-color: antiquewhite;
+    background-color: rgb(233, 214, 188);
+    border-radius: 20px;
   }
-.contentImg { /*Картинка для блока content*/ 
+.contentImg {  
     width: 800px;
-    border-radius: 10px;
+    border-radius: 20px;
   }
+.fontContent{
+    font-size: 10px;
+}
