@@ -7,3 +7,6 @@
 .item{
   color: white;
 }
+.links:hover{
+  color: black;
+}
