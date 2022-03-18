@@ -1,8 +1,4 @@
 .header{
     grid-area: h;
     background-color: aqua;
-    border-radius: 20px;
   }
-.fontHeader{
-    font-size: 40px;
-}

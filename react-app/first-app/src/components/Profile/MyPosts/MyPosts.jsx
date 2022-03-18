@@ -1,9 +1,10 @@
-import mp from "./MyPosts.module.css";
 import Post from "./Post/Post.jsx";
+import mp from "./MyPosts.module.css";
+import defaultStyle from '../../../DefaultStyle/DefaultStyle.module.css'
 //
 const MyPosts = () => {
     return (
-        <div className={mp.item}>
+        <div className={`${defaultStyle.defaultStyle} ${mp.item}`}>
             Мои посты
             <div>
                 <textarea></textarea>

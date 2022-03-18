@@ -1,14 +1,5 @@
 .content{
-<<<<<<< HEAD
-   color:aqua;
-  }
-=======
   grid-area: c;
   background-color: rgb(175, 173, 170);
   height: 500px;
-  border-radius: 20px;
 }
-.fontContent{
-  font-size: 40px;
-}
->>>>>>> b34713586174133c3245ab202dd00bccadec442e
