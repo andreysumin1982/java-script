@@ -11,13 +11,13 @@ const Nav = () => {
                 <a href="/dialogs">Messages</a>
             </div>
             <div className={n.item}>
-                <a>News</a>
+                <a href="/news">News</a>
             </div>
             <div className={n.item}>
-                <a>Music</a>
+                <a href="/music">Music</a>
             </div>
             <div className={n.item}>
-                <a>Setting</a>
+                <a href="/settings">Setting</a>
             </div>
         </nav>
     );

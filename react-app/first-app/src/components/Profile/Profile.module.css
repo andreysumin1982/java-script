@@ -1,8 +1,9 @@
 .content{
     grid-area: c;
     background-color: rgb(233, 214, 188);
+    border-radius: 20px;
   }
 .contentImg {  
     width: 800px;
-    border-radius: 10px;
+    border-radius: 20px;
   }
