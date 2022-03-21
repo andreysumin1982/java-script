@@ -6,29 +6,28 @@ const Dialogs = () => {
     return (
           // Использование нескольких классов css
       <div className={`${defaultStyle.defaultStyle} ${d.dialogs}`}>
-        <div className="dialogs_item">
-          <div className="dialog">
+        <div className={d.dialogsItems}>
+          <div className={d.dialog + ' ' + d.active}>
             *  Dialogs1 *
           </div>
-          <div className="dialog">
+          <div className={d.dialog}>
             *  Dialogs2 *
           </div>
-          <div className="dialog">
+          <div className={d.dialog}>
             *  Dialogs3 *
           </div>
-          <div className="dialog">
+          <div className={d.dialog}>
             *  Dialogs4 *
           </div>
-          <div className="dialog">
+          <div className={d.dialog}>
             *  Dialogs5 *
           </div>
         </div>
-        <div className="messages">
-          <div className="message">Hello</div>
-          <div className="message">By</div>
-          <div className="message">Go</div>
-          <div className="message">de</div>
-          <div className="message">Br</div>
+        <div className={d.messages}>
+          <div className={d.message}>Hello</div>
+          <div className={d.message}>By</div>
+          <div className={d.message}>Go</div>
+          <div className={d.message}>de</div>
         </div>
       </div>
       
