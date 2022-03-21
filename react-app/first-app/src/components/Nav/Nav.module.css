@@ -3,9 +3,10 @@
     grid-area: n;
     background-color: coral;
   }
-.item{
+/*Ссылки*/
+  .links{
   color: white;
 }
-.links:hover{
+.links:hover{ 
   color: black;
 }
