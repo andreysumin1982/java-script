@@ -20,7 +20,11 @@ function App() {
         <div> 
           <Routes>  {/* Подключаем маршруты */}
             <Route path="/profile" element = {<Profile />}/>
-            <Route path="/dialogs" element = {<Dialogs />}/>
+            {/*В React Router v6 что-бы было поведение как без exact, нужно писать так: 
+              <Route path="/dialogs/*" element={<Dialogs/>} /> ( внимание на звездочку)
+              Точно также будет поведение <Route exact path="/dialogs/*" element={<Dialogs/>}
+              -- ничего не будет маршрутизировать дальше dialogs/. */}
+            <Route path="/dialogs/*" element = {<Dialogs />}/>
             <Route path="/news" element = {<News />}/>
             <Route path="/music" element = {<Music />}/>
             <Route path="/settings" element = {<Settings />}/>
