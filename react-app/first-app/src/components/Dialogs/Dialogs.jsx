@@ -2,6 +2,7 @@ import d from"./Dialogs.module.css"; // Импортируем модуль css
 import defaultStyle from '../../DefaultStyle/DefaultStyle.module.css'
 import { NavLink } from "react-router-dom";
 
+// Создаем компонены DialogItems, Message
 //
 const DialogItems = (props) =>{
   let path = "/dialogs/" + props.id  
@@ -20,7 +21,7 @@ const Message = (props) => {
     );
 };
 
-// Создаем компоненту Dialogs
+// Создаем компоненту Dialogs и подключаем к ней компоненты DialogItems, Message
 const Dialogs = () => {
     return (
           // Использование нескольких классов css
