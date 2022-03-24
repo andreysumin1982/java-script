@@ -16,6 +16,7 @@ const DialogItems = (props) =>{
 };
 //
 const Message = (props) => {
+  //
   return (
       <div className={d.message}>{props.message}</div>
     );
@@ -23,24 +24,37 @@ const Message = (props) => {
 
 // Создаем компоненту Dialogs и подключаем к ней компоненты DialogItems, Message
 const Dialogs = () => {
-    return (
+  
+  // "Получили данные с сервера"
+  let dialogsData = [
+    {id: 1, name: 'Andrey'},
+    {id: 2, name: 'Timur'},
+    {id: 3, name: 'Evgen'},
+    {id: 4, name: 'Kostya'},
+    {id: 5, name: 'Alex'}
+  ];
+  let messagesData = [
+    {id: 1, message: 'Hello'},
+    {id: 2, message: 'Bla'},
+    {id: 3, message: 'Ept'},
+    {id: 4, message: 'Hi'},
+    {id: 5, message: 'Help'}
+  ];
+  
+  // Перебираем массивы объектов получ. с сервака и вытаскиваем данн. в новые массивы 
+  let dialogsElement = dialogsData.map(d => <DialogItems name = {d.name} id={d.id}/>);
+  let messagesElement = messagesData.map(m => <Message message = {m.message}/>);
+  //
+  return (
           // Использование нескольких классов css
-      <div className={`${defaultStyle.defaultStyle} ${d.dialogs}`}>
-        <div className={d.dialogsItems}>
-          <DialogItems name = "Andrey" id="1"/>
-          <DialogItems name = "Timur" id="2"/>
-          <DialogItems name = "Evgen" id="3"/>
-          <DialogItems name = "Kostya" id="4"/>
-          <DialogItems name = "Alex" id="5"/>
-        </div>
-        <div className={d.messages}>
-          <Message message = "Hello"/>
-          <Message message = "Bla"/>
-          <Message message = "Ept"/>
-          <Message message = "Hi"/>
-        </div>
+    <div className={`${defaultStyle.defaultStyle} ${d.dialogs}`}>
+      <div className={d.dialogsItems}>
+        {dialogsElement}
       </div>
-    
+      <div className={d.messages}>
+        {messagesElement}
+      </div>
+    </div>
     );
 };
 //

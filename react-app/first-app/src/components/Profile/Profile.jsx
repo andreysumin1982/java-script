@@ -6,6 +6,7 @@ import defaultStyle from '../../DefaultStyle/DefaultStyle.module.css'
 
 // Создаем компоненту Profile
 const Profile = () => {
+    //
     return (
         <div className={`${defaultStyle.defaultStyle} ${p.content}`}>
             <ProfileInfo />
