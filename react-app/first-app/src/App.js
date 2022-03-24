@@ -9,7 +9,7 @@ import Music from './components/Music/Music.jsx';
 import Settings from './components/Settings/Settings';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 //
-function App() {
+function App(props) {
   //
   return (
     <BrowserRouter>
@@ -17,17 +17,18 @@ function App() {
         <Header />
         <Nav />
 
-        <div> 
+        <div>
           <Routes>  {/* Подключаем маршруты */}
-            <Route path="/profile" element = {<Profile />}/>
+            <Route path="/profile" element={<Profile />} />
             {/*В React Router v6 что-бы было поведение как без exact, нужно писать так: 
               <Route path="/dialogs/*" element={<Dialogs/>} /> ( внимание на звездочку)
               Точно также будет поведение <Route exact path="/dialogs/*" element={<Dialogs/>}
               -- ничего не будет маршрутизировать дальше dialogs/. */}
-            <Route path="/dialogs/*" element = {<Dialogs />}/>
-            <Route path="/news" element = {<News />}/>
-            <Route path="/music" element = {<Music />}/>
-            <Route path="/settings" element = {<Settings />}/>
+            <Route path="/dialogs/*" element={<Dialogs dialogsData={props.dialogsData}
+              messagesData={props.messagesData} />} />
+            <Route path="/news" element={<News />} />
+            <Route path="/music" element={<Music />} />
+            <Route path="/settings" element={<Settings />} />
           </Routes>
         </div>
 
