@@ -10,7 +10,7 @@ const Profile = (props) => {
     return (
         <div className={`${defaultStyle.defaultStyle} ${p.content}`}>
             <ProfileInfo />
-            <MyPosts /> 
+            <MyPosts postsData = {props.postsData}/> 
         </div>
     );
 };

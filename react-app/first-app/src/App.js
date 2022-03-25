@@ -18,13 +18,13 @@ function App(props) {
         <Nav />
 
         <div>
-          <Routes>  {/* Подключаем маршруты */}
-            <Route path="/profile" element={<Profile />} />
+          <Routes>  {/* Подключаем маршруты  и передаем через props данные*/}
             {/*В React Router v6 что-бы было поведение как без exact, нужно писать так: 
               <Route path="/dialogs/*" element={<Dialogs/>} /> ( внимание на звездочку)
               Точно также будет поведение <Route exact path="/dialogs/*" element={<Dialogs/>}
               -- ничего не будет маршрутизировать дальше dialogs/. */}
-            <Route path="/dialogs/*" element={<Dialogs dialogsData={props.dialogsData}
+            <Route path="/profile" element={<Profile postsData = {props.postsData}/>} />
+            <Route path="/dialogs/*" element={<Dialogs dialogsData = {props.dialogsData}
               messagesData={props.messagesData} />} />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
