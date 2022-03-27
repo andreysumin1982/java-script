@@ -2,9 +2,13 @@
 .dialogsItems{
   padding: 10px;
 }
-.dialogsItems .active{
-  color: rgb(72, 105, 11);
+.dialogsItems img {
+  width: 80px;
+  height: 80px;
 }
-.dialog{
-
+.links{
+  color :rgb(100, 133, 17);
+}
+.links:active{
+  color: rgb(18, 20, 13);
 }
