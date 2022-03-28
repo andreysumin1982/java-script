@@ -24,7 +24,20 @@ const state = {
             { id: 4, message: 'Hi' },
             { id: 5, message: 'Help' }
         ],
-    }
+    },
+    friends: [
+        { id: 1, name: 'Andrey'},
+        { id: 2, name: 'Timur'},
+        { id: 3, name: 'Evgen'},
+        { id: 4, name: 'Kostya'},
+        { id: 5, name: 'Alex'},
+        { id: 6, name: 'Eva' },
+        { id: 7, name: 'Inna' },
+        { id: 8, name: 'Klava' },
+        
+    ]
+
+    
 }
 //
 export default state;
