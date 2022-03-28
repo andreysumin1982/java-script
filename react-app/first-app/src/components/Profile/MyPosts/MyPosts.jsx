@@ -1,3 +1,4 @@
+import React from "react";
 import Post from "./Post/Post.jsx";
 import mp from "./MyPosts.module.css";
 import defaultStyle from '../../../DefaultStyle/DefaultStyle.module.css'
@@ -7,12 +8,24 @@ const MyPosts = (props) => {
     //Перебираем массив объектов получ. с сервака и вытаскиваем данн. в новый массив 
     let postsElements = props.postsData.map(p => <Post message = {p.message}/>)
     //
+    //Создаем реферальную ссылку
+    let newPostElement = React.createRef();
+    //Созаем ф-цию для вывода сообщения
+    let addPost = () =>{
+        // Обращение к элементам DOM-дерева в react осуществ. через virtualDOM
+        // обращаемся к ref-ссылке и вытаскиваем значение value
+        let text = newPostElement.current.value
+            console.log('textarea:' ,text)
+    }
+    //
     return (
         <div className={`${defaultStyle.defaultStyle} ${mp.item}`}>
             * Мои посты *
             <div>
-                <textarea></textarea>
-                <button>Add</button>
+                {/* Привязываем ref-ссылку на элемент textarea */}
+                <textarea ref={newPostElement}></textarea>
+                {/*Событие на кнопку */}
+                <button onClick={addPost}>Add</button>
             </div>
                 {postsElements}
         </div>

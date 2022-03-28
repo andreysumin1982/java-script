@@ -7,11 +7,15 @@
 .links{
   color: white;
 }
-.linkSettings{
-  margin-top: 20px;
+.links:active{
+  color: rgb(236, 16, 16);
 }
 .links:hover{ 
   color: black;
+}
+/*settings*/
+.linkSettings{
+  margin-top: 20px;
 }
 /*friends*/
 .h1{
