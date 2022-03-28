@@ -15,7 +15,7 @@ function App(props) {
     <BrowserRouter>
       <div className='app-wrapper'>
         <Header />
-        <Nav />
+        <Nav friends={props.state.friends}/>
 
         <div>
           <Routes>  {/* Подключаем маршруты  и передаем через props данные*/}
