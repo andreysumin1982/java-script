@@ -8,7 +8,7 @@ const MyPosts = (props) => {
     //Перебираем массив объектов получ. с сервака и вытаскиваем данн. в новый массив 
     let postsElements = props.postsData.map(p => <Post message = {p.message}/>)
     //
-    //Создаем реферальную ссылку
+    //Создаем пустую ссылку
     let newPostElement = React.createRef();
     //Созаем ф-цию для вывода сообщения
     let addPost = () =>{

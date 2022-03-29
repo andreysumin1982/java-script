@@ -2,25 +2,8 @@
   grid-area: c;
   /**/
   display: grid;
-  grid-template-columns: 2fr 10fr;
+  grid-template-columns: 10% 20%;
   background-color: rgb(175, 173, 170);
   height: 500px;
 }
 /**/
-
-.dialogsItems{
-  padding: 10px;
-}
-.dialogsItems .active{
-  color: rgb(72, 105, 11);
-}
-.dialog{
-
-}
-/**/
-.messages{
-  padding: 10px;
-}
-.message{
-
-}

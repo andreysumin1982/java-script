@@ -1,3 +1,4 @@
+import React from "react";
 import d from"./Dialogs.module.css"; // Импортируем модуль css
 import defaultStyle from '../../DefaultStyle/DefaultStyle.module.css'
 import DialogItems from "./DialogItem/DialogItem";
@@ -10,15 +11,28 @@ const Dialogs = (props) => {
   let dialogsElement = props.dialogsData.map(d => <DialogItems name = {d.name} id={d.id}/>);
   let messagesElement = props.messagesData.map(m => <Message message = {m.message}/>);
   //
+  // Создаем пустую ссылку
+  let newMessageElement = React.createRef();
+  let addMessage = ()=>{
+    let text = newMessageElement.current.value
+    console.log('textarea message:', text)
+  };
+  //
   return (
           // Использование нескольких классов css
     <div className={`${defaultStyle.defaultStyle} ${d.dialogs}`}>
-      <div className={d.dialogsItems}>
+      <div>
         {dialogsElement}
       </div>
-      <div className={d.messages}>
+      <div>
         {messagesElement}
       </div>
+      {/*textarea addMessage */}
+      <div>
+        <textarea ref={newMessageElement}></textarea>
+        <button onClick={addMessage}>addMessage</button>
+      </div>
+
     </div>
     );
 };

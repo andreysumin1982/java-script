@@ -1,5 +1,4 @@
 import di from './DialogItem.module.css';  
-import defaultStyle from '../../../DefaultStyle/DefaultStyle.module.css'
 import { NavLink } from "react-router-dom";
 //
 const DialogItems = (props) =>{
