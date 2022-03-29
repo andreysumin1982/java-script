@@ -13,9 +13,9 @@ const Dialogs = (props) => {
   //
   // Создаем пустую ссылку
   let newMessageElement = React.createRef();
-  let addMessage = ()=>{
+  let sendMessage = ()=>{
     let text = newMessageElement.current.value
-    console.log('textarea message:', text)
+    console.log('textarea sendMessage:', text)
   };
   //
   return (
@@ -29,8 +29,8 @@ const Dialogs = (props) => {
       </div>
       {/*textarea addMessage */}
       <div>
-        <textarea ref={newMessageElement}></textarea>
-        <button onClick={addMessage}>addMessage</button>
+        <textarea className={d.textArea} ref={newMessageElement}></textarea>
+        <button onClick={sendMessage}>Отправить</button>
       </div>
 
     </div>

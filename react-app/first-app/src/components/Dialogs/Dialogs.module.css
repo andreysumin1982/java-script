@@ -6,4 +6,8 @@
   background-color: rgb(175, 173, 170);
   height: 500px;
 }
-/**/
+/*textarea*/
+.textArea{
+  width: 300px;
+  height: 150px;
+}

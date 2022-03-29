@@ -15,8 +15,10 @@ const MyPosts = (props) => {
         // Обращение к элементам DOM-дерева в react осуществ. через virtualDOM
         // обращаемся к ref-ссылке и вытаскиваем значение value
         let text = newPostElement.current.value
-            console.log('textarea:' ,text)
-    }
+            // передаем в ф-цию текст из textarea
+            props.addPost(text)
+            console.log('textarea:', text)
+    };
     //
     return (
         <div className={`${defaultStyle.defaultStyle} ${mp.item}`}>
@@ -25,7 +27,7 @@ const MyPosts = (props) => {
                 {/* Привязываем ref-ссылку на элемент textarea */}
                 <textarea ref={newPostElement}></textarea>
                 {/*Событие на кнопку */}
-                <button onClick={addPost}>Add</button>
+                <button onClick={addPost}>Добавить</button>
             </div>
                 {postsElements}
         </div>

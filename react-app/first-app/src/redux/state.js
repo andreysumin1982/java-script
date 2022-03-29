@@ -34,4 +34,18 @@ const state = {
     ]  
 }
 //
+export let addPost = (postMessage) =>{
+    /* Ф-ция добавляет новые посты в state.profilePage.postsData */
+    // Отбираем все id в отдельный массив
+    let arrayId = state.profilePage.postsData.map(id => id.id)
+    //
+    let newPost = { // Создаем новый пост
+        id : (arrayId.length)+1, // немерация id 
+        message : postMessage 
+    }
+    // Добавляем новый пост
+    state.profilePage.postsData.push(newPost)
+};
+//console.log(state.profilePage.postsData);
+//
 export default state;
