@@ -1,7 +1,11 @@
 .content{
     grid-area: c;
-    background-color: rgb(233, 214, 188);
+    /* background-color: rgba(233, 214, 188, 0.5); */
+    overflow-y: auto;
   }
-.contentImg {  
-    width: 800px;
-  }
+.contentImg{
+  background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url(../images/fitness/2.jpg);
+  background-size:1150px;
+  width: 100%;
+  height: 720px;
+}

@@ -18,6 +18,7 @@ const MyPosts = (props) => {
             // передаем в ф-цию текст из textarea
             props.addPost(text)
             console.log('textarea:', text)
+            newPostElement.current.value = ''
     };
     //
     return (

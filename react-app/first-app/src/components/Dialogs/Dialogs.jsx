@@ -20,7 +20,7 @@ const Dialogs = (props) => {
   //
   return (
           // Использование нескольких классов css
-    <div className={`${defaultStyle.defaultStyle} ${d.dialogs}`}>
+    <div className={`${defaultStyle.defaultStyle} ${d.dialogs} ${d.contentImg}`}>
       <div>
         {dialogsElement}
       </div>

@@ -26,12 +26,19 @@ const state = {
         ],
     },
     friends: [
-        
+
         { id: 6, name: 'Eva' },
         { id: 7, name: 'Inna' },
         { id: 8, name: 'Klava' },
-        
-    ]  
+
+    ],
+    img: [
+        { girl1: '/home/asumin/github/projects/java-script/react-app/first-app/src/img/fitness/1.jpg' },
+        { girl2: '/home/asumin/github/projects/java-script/react-app/first-app/src/img/fitness/2.jpg' },
+        { girl3: '/home/asumin/github/projects/java-script/react-app/first-app/src/img/fitness/3.jpg' },
+        { girl4: '/home/asumin/github/projects/java-script/react-app/first-app/src/img/fitness/4.jpg' },
+        { girl5: '/home/asumin/github/projects/java-script/react-app/first-app/src/img/fitness/5.jpg' }
+    ]
 }
 //
 export let addPost = (postMessage) =>{

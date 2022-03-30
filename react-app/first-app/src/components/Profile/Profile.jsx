@@ -8,8 +8,8 @@ import defaultStyle from '../../DefaultStyle/DefaultStyle.module.css'
 const Profile = (props) => {
     //
     return (
-        <div className={`${defaultStyle.defaultStyle} ${p.content}`}>
-            <ProfileInfo />
+        <div className={`${defaultStyle.defaultStyle} ${p.content} ${p.contentImg}`}>
+            <ProfileInfo/>
             <MyPosts postsData={props.postsData} addPost={props.addPost}/> 
         </div>
     );
