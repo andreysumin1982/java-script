@@ -4,4 +4,6 @@
 - DOM
 - События
 - Ajax
+- React
+- Redux
 - Лабы
