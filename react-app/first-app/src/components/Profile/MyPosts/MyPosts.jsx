@@ -18,15 +18,21 @@ const MyPosts = (props) => {
             // передаем в ф-цию текст из textarea
             props.addPost(text)
             console.log('textarea:', text)
-            newPostElement.current.value = ''
+            newPostElement.current.value = '' // обнуляем
+    };
+    // Создаем ф-цию для смены значения textarea
+    let onPostChange = () => {
+        let text = newPostElement.current.value;
+        // передаем в ф-цию текст из textarea
+        props.updateNewPostText(text);
     };
     //
     return (
         <div className={`${defaultStyle.defaultStyle} ${mp.item}`}>
             * Мои посты *
             <div>
-                {/* Привязываем ref-ссылку на элемент textarea */}
-                <textarea ref={newPostElement}></textarea>
+                {/* Привязываем ref-ссылку на элемент textarea и вызываем onPostChange */}
+                <textarea onChange={onPostChange} ref={newPostElement}></textarea>
                 {/*Событие на кнопку */}
                 <button onClick={addPost}>Добавить</button>
             </div>

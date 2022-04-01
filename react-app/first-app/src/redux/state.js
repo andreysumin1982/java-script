@@ -1,6 +1,6 @@
 // Импортируем ф-цию для перерисовки контента.
 import {rerenderEntireTree} from '../render';
-
+//
 // "Получили данные с сервера"
 const state = {
     profilePage: {
@@ -11,6 +11,7 @@ const state = {
             { id: 4, message: "Объект Console служит для доступа к средствам отладки браузера (например, Web Console (Веб-консоль) в Firefox). Работа с ним отличается в разных браузерах, но эти методы и свойства по факту поддерживаются всеми браузерами." },
             { id: 5, message: "Объект Console служит для доступа к средствам отладки браузера (например, Web Console (Веб-консоль) в Firefox). Работа с ним отличается в разных браузерах, но эти методы и свойства по факту поддерживаются всеми браузерами." }
         ],
+        newPostText : '',
     },
     messagesPage: {
         dialogsData: [
@@ -37,6 +38,7 @@ const state = {
     ],
     
 }
+window.state = state;
 //
 export let addPost = (postMessage) =>{
     /* Ф-ция добавляет новые посты в state.profilePage.postsData */
@@ -52,6 +54,13 @@ export let addPost = (postMessage) =>{
     // Перерисовываем 
     rerenderEntireTree(state);
 };
+//
+export let updateNewPostText = (postText) =>{
+    /* Ф-ция принимает аргумент и обновляет объект state.profilePage.newPostText*/
+    state.profilePage.newPostText = postText
+    // Перерисовываем 
+    rerenderEntireTree(state);
+}
 //console.log(state.profilePage.postsData);
 //
 export default state;

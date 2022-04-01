@@ -4,7 +4,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import { addPost } from './redux/state'; // Импортируем ф-цию addPost
+import { addPost }from './redux/state'; // Импортируем ф-цию addPost
+import {updateNewPostText} from './redux/state'; // Импортируем ф-цию updateNewPostText
 //
 // Оборачиваем в ф-цию rerenderEnttireTree
 export let rerenderEntireTree = (state) => {
@@ -12,7 +13,7 @@ export let rerenderEntireTree = (state) => {
     ReactDOM.render(
       <React.StrictMode>
         {/* Прокидываем данные через пропсы в App */}
-        <App state={state} addPost={addPost} />
+        <App state={state} addPost={addPost} updateNewPostText={updateNewPostText}/>
       </React.StrictMode>,
       document.getElementById('root')
     );

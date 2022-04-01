@@ -24,7 +24,7 @@ function App(props) {
               Точно также будет поведение <Route exact path="/dialogs/*" element={<Dialogs/>}
               -- ничего не будет маршрутизировать дальше dialogs/. */}
             <Route path="/profile" element={<Profile postsData = {props.state.profilePage.postsData} 
-              addPost={props.addPost}/>} />
+              addPost={props.addPost} updateNewPostText={props.updateNewPostText}/>} />
             <Route path="/dialogs/*" element={<Dialogs dialogsData = {props.state.messagesPage.dialogsData}
               messagesData={props.state.messagesPage.messagesData} />} />
             <Route path="/news" element={<News />} />
