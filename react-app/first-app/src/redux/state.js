@@ -1,3 +1,6 @@
+// Импортируем ф-цию для перерисовки контента.
+import {rerenderEntireTree} from '../render';
+
 // "Получили данные с сервера"
 const state = {
     profilePage: {
@@ -32,13 +35,7 @@ const state = {
         { id: 8, name: 'Klava' },
 
     ],
-    img: [
-        { girl1: '/home/asumin/github/projects/java-script/react-app/first-app/src/img/fitness/1.jpg' },
-        { girl2: '/home/asumin/github/projects/java-script/react-app/first-app/src/img/fitness/2.jpg' },
-        { girl3: '/home/asumin/github/projects/java-script/react-app/first-app/src/img/fitness/3.jpg' },
-        { girl4: '/home/asumin/github/projects/java-script/react-app/first-app/src/img/fitness/4.jpg' },
-        { girl5: '/home/asumin/github/projects/java-script/react-app/first-app/src/img/fitness/5.jpg' }
-    ]
+    
 }
 //
 export let addPost = (postMessage) =>{
@@ -52,6 +49,8 @@ export let addPost = (postMessage) =>{
     }
     // Добавляем новый пост
     state.profilePage.postsData.push(newPost)
+    // Перерисовываем 
+    rerenderEntireTree(state);
 };
 //console.log(state.profilePage.postsData);
 //
