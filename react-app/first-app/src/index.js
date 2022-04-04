@@ -1,24 +1,27 @@
-//import React from 'react';
-//import ReactDOM from 'react-dom';
-//import App from './App';
-import state from './redux/state'; // Импортируем ф-цию addPost
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import state, { addPost, subscribe } from './redux/state'; // Импортируем state, ф-ции addPost, subscribe
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import {rerenderEntireTree} from './render'; // Импортируем ф-цию для перерисовки контента.
+
 
 // Оборачиваем в ф-цию rerenderEnttireTree
-// export let rerenderEntireTree = () => {
-//   ReactDOM.render(
-//     <React.StrictMode>
-//       {/* Прокидываем (все) в App */}
-//       <App state={state} addPost={addPost} />
-//     </React.StrictMode>,
-//     document.getElementById('root')
-//   );
-// };
+export let rerenderEntireTree = () => {
+  ReactDOM.render(
+    <React.StrictMode>
+      {/* Прокидываем (все) в App */}
+      <App state={state} addPost={addPost} />
+    </React.StrictMode>,
+    document.getElementById('root')
+  );
+};
 
 // Вызываем
 rerenderEntireTree(state);
+
+//Передаем в subscribe ф-цию rerenderEntireTree
+subscribe(rerenderEntireTree);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

@@ -1,6 +1,4 @@
-// Импортируем ф-цию для перерисовки контента.
-import {rerenderEntireTree} from '../render';
-//
+
 // "Получили данные с сервера"
 const state = {
     profilePage: {
@@ -40,6 +38,10 @@ const state = {
 }
 window.state = state;
 //
+let rerenderEntireTree = ()=>{
+    console.log('State')
+}
+//
 export let addPost = (postMessage) =>{
     /* Ф-ция добавляет новые посты в state.profilePage.postsData */
     // Отбираем все id в отдельный массив
@@ -62,5 +64,10 @@ export let updateNewPostText = (postText) =>{
     rerenderEntireTree(state);
 }
 //console.log(state.profilePage.postsData);
+//
+export let subscribe = (observer)=>{ // паттерн observer
+    /*Ф-ция меняет состояние ф-ции rerenderEntireTree*/
+    rerenderEntireTree = observer;
+}
 //
 export default state;
