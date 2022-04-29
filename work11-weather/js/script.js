@@ -1,27 +1,4 @@
 /* Events */
-<<<<<<< HEAD
-const url = 'https://wttr.in/'
-//
-request_headers = {
-    'Accept-Language' : 'ru'
-}
-//
-let weather_parameters = {
-    'u': '',
-    '0': '',
-    'M': '',
-    'T': ''
-}
-//
-fetch(url,weather_parameters, request_headers)
-    .then(response => response.text())
-    .then(data => {
-        console.log(data)
-        document.querySelector('.date').innerHTML=data
-    })
-    
-        
-=======
 //
 const url = 'https://wttr.in/'
 const url2 = 'https://jsonplaceholder.typicode.com/users'
@@ -59,7 +36,7 @@ function make_parameters(){
 //
 function processData(outputData){
     outputData.forEach(element => {
-        console.log(element[0])
+        console.log(element)
     });    
 
 }
@@ -76,15 +53,6 @@ fetch(make_url('Санкт-Петербург'), make_parameters()) // Возв�
                     })
         })        
 // Рекурсия
-function getProp(o) {
-    for(var prop in o) {
-        if(typeof(o[prop]) === 'object') {
-            getProp(o[prop]);
-        } else {
-            console.log('Finite value: ',o[prop])
-        }
-    }
-}
 //
 function func(arr) {
 	for (let elem of arr) {
@@ -96,20 +64,21 @@ function func(arr) {
 	}
 }
 //func([1, [2, 7, 8], [3, 4, [5, [6, 7]]]]);
-//
-function rec(parent){
-    
-}
-//
-let data = document.querySelector('html').children
-//console.log(data)
-function recur(parent){
-    let data = document.querySelector(parent).children
-    console.log(typeof(data))
-    for(let elem in data){
-        console.log(elem)
+
+// Обход DOM дерева
+let parent = document.documentElement
+function recur(par){
+    if (par.children.length == 0){
+        console.log(par)
+        return
+    }
+    else {
+        for (let item of par.children){
+            if (item.children.length != 0){
+                recur(item)
+            }
+            else console.log(item)
+        }
     }
 }
-//
-recur('html')
->>>>>>> 101d96ba98740eebbfa1be50e423b47226f149e6
+recur(parent)
