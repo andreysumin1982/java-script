@@ -15,28 +15,26 @@ body, button, h1, h2, h3, h4, p, a {
     grid-gap: 5px;
     /* сетка */
     grid-template-areas:
-        "name date date"
-        "description icon temp"
-        "wind humidity temp2";
+        "date date date"
+        "name temp temp"
+        "description description description";
     /**/
     border: 1px solid silver;
+    border-radius: 5px;
     width: 50%;
     padding: 5px;
     margin: 3% auto;
 }
 .weather{
     border: 1px solid silver;
+    border-radius: 5px;
     padding: 5px;
 }
 /* сетка */
 .date{grid-area: date;}
 .name{grid-area: name;}
 .description{grid-area: description;}
-.icon{grid-area: icon;}
 .temp{grid-area: temp;}
-.temp2{grid-area: temp2;}
-.wind{grid-area: wind;}
-.humidity{grid-area: humidity;}
 /**/
 
 
