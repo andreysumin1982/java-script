@@ -62,16 +62,6 @@ function getProp(o) {
         }
     }
 }
-//
-function func(arr) {
-	for (let elem of arr) {
-		if (typeof elem == 'object') {
-			func(elem);
-		} else {
-			console.log(elem);
-		}
-	}
-}
 //func([1, [2, 7, 8], [3, 4, [5, [6, 7]]]]);
 //
 function rec(parent){
