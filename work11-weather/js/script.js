@@ -36,7 +36,7 @@ function make_parameters(){
 //
 function processData(outputData){
     outputData.forEach(element => {
-        console.log(element[0])
+        console.log(element)
     });    
 
 }
@@ -53,6 +53,7 @@ fetch(make_url('Санкт-Петербург'), make_parameters()) // Возв�
                     })
         })        
 // Рекурсия
+<<<<<<< HEAD
 function getProp(o) {
     for(var prop in o) {
         if(typeof(o[prop]) === 'object') {
@@ -61,21 +62,34 @@ function getProp(o) {
             console.log('Finite value: ',o[prop])
         }
     }
+=======
+//
+function func(arr) {
+	for (let elem of arr) {
+		if (typeof elem == 'object') {
+			func(elem);
+		} else {
+			console.log(elem);
+		}
+	}
+>>>>>>> 65c01a7a9438ab33d0c2d857582dde875f3f763b
 }
 //func([1, [2, 7, 8], [3, 4, [5, [6, 7]]]]);
-//
-function rec(parent){
-    
-}
-//
-let data = document.querySelector('html').children
-//console.log(data)
-function recur(parent){
-    let data = document.querySelector(parent).children
-    console.log(typeof(data))
-    for(let elem in data){
-        console.log(elem)
+
+// Обход DOM дерева
+let parent = document.documentElement
+function recur(par){
+    if (par.children.length == 0){
+        console.log(par)
+        return
+    }
+    else {
+        for (let item of par.children){
+            if (item.children.length != 0){
+                recur(item)
+            }
+            else console.log(item)
+        }
     }
 }
-//
-recur('html')
+recur(parent)
