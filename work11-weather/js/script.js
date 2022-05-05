@@ -35,15 +35,16 @@ function make_parameters(){
 }
 //
 function processData(outputData){
-    outputData.forEach(element => {
-        console.log(element)
-    });    
-
+    let regexp = new RegExp("\\bПрогноз","gi")
+    outputData.forEach(element =>{
+        document.querySelector('.description').innerHTML = element
+    })
 }
 //
 fetch(make_url('Санкт-Петербург'), make_parameters()) // Возвр. промис
         .then((response) => {
             console.log(response)
+            document.querySelector('.name').innerHTML = `Status: ${response.status}`
             response.text() //Возвр. промис
                 .then(data => 
                     {
@@ -52,8 +53,9 @@ fetch(make_url('Санкт-Петербург'), make_parameters()) // Возв�
                         processData(datasetHTML) // 
                     })
         })        
+//   
+  
 // Рекурсия
-//
 function func(arr) {
 	for (let elem of arr) {
 		if (typeof elem == 'object') {
@@ -77,7 +79,7 @@ function recur(par){
             if (item.children.length != 0){
                 recur(item)
             }
-            else console.log(item)
+            else console.log(typeof(item))
         }
     }
 }
