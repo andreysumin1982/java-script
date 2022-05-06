@@ -2,25 +2,10 @@
 //
 const url = 'https://wttr.in/'
 const url2 = 'https://jsonplaceholder.typicode.com/users'
+const url3 = 'https://news.ycombinator.com/'
+
 //
 datasetHTML = []
-//
-cities = [
-    'Омск',
-    'Калининград',
-    'Челябинск',
-    'Владивосток',
-    'Красноярск',
-    'Москва',
-    'Екатеринбург'
-]
-//
-function make_headers(){
-   let headers = {
-        'Accept-Language' : 'ru'
-        }
-    return headers
-}
 //
 function make_url(city){
     return `${url}${city}`
@@ -29,41 +14,61 @@ function make_url(city){
 function make_parameters(){
     let params = {
         'format': 2,  //погода одной строкой
-        'M': ''  // скорость ветра в "м/с"
+        'M': '',  // скорость ветра в "м/с"
+        'lang': 'ru'
      }
     return params
 }
 //
-function processData(outputData){
-    outputData.forEach(element => {
-        console.log(element)
-    });    
-
-}
-//
-fetch(make_url('Санкт-Петербург'), make_parameters()) // Возвр. промис
-        .then((response) => {
-            console.log(response)
-            response.text() //Возвр. промис
+function parser(){
+    //
+   fetch(make_url('Saint Petersburg'), make_parameters())
+        .then((response) => { // Возвр. промис
+            //console.log(response)
+            document.querySelector('.temp').innerHTML = `Status: ${response.status}<br>
+                                                         StatusTexe: ${response.statusText}<br>
+                                                         Type: ${response.type}<br>
+                                                         URL: <a href="${response.url}">${response.url}</a>`
+            response.text() // Возвр. промис
                 .then(data => 
                     {
-                        //console.log(data)
-                        datasetHTML.push(data)
-                        processData(datasetHTML) // 
+                        function getDate(){
+                            let date1 = new Date
+                                d = String(date1.getDate())
+                                m = String(date1.getMonth() + 1)
+                                y = String(date1.getFullYear())
+                            return d+'-'+m+'-'+y;
+                        }
+                        //
+                        let parser = new DOMParser();  
+                        let doc = parser.parseFromString(data, "text/html");
+                        //console.log(doc.body.innerHTML.slice(0,450))         
+                        document.querySelector('.date').innerHTML = `Дата: ${getDate()} ${parseInt( Date.now()/1000)}`
+                        document.querySelector('.name').innerHTML = doc.body.innerHTML.slice(0,440)
                     })
-        })        
-// Рекурсия
-<<<<<<< HEAD
-function getProp(o) {
-    for(var prop in o) {
-        if(typeof(o[prop]) === 'object') {
-            getProp(o[prop]);
-        } else {
-            console.log('Finite value: ',o[prop])
-        }
-    }
-=======
+            })
+        .catch(error => {
+            console.log(error)
+            document.querySelector('.name').innerHTML = error
+        }); // fetch        
+};// parser
 //
+let count = 0
+setInterval(() =>{
+    /*
+        Обновляем погодные данные на странице
+        Выполняется кажд. 30 мин
+    */
+        parser()
+        console.log(`Число запусков: ${count++}`);
+    //
+
+},180000);
+//
+parser()
+
+//---------------------------------------------------------------------------
+// Рекурсия
 function func(arr) {
 	for (let elem of arr) {
 		if (typeof elem == 'object') {
@@ -72,12 +77,10 @@ function func(arr) {
 			console.log(elem);
 		}
 	}
->>>>>>> 65c01a7a9438ab33d0c2d857582dde875f3f763b
 }
-//func([1, [2, 7, 8], [3, 4, [5, [6, 7]]]]);
-
+//
 // Обход DOM дерева
-let parent = document.documentElement
+let parent = document.documentElement // html
 function recur(par){
     if (par.children.length == 0){
         console.log(par)
@@ -92,4 +95,4 @@ function recur(par){
         }
     }
 }
-recur(parent)
+//recur(parent)
