@@ -15,7 +15,7 @@ body, button, h1, h2, h3, h4, p, a {
     grid-gap: 10px;
     /* сетка */
     grid-template-areas:
-        "date date date"
+        "date date time"
         "name temp temp"
         "description description description";
     /**/
@@ -32,7 +32,11 @@ body, button, h1, h2, h3, h4, p, a {
     padding: 5px;
 }
 /* сетка */
-.date{grid-area: date;}
+.date{
+    grid-area: date;
+    background-color: #0093E9;
+    background-image: linear-gradient(190deg, #979899 0%, #e8edec 100%);
+}
 .name{
     grid-area: name; 
     font-size: 16px;
@@ -51,7 +55,19 @@ body, button, h1, h2, h3, h4, p, a {
     background-color: #0093E9;
     background-image: linear-gradient(140deg, #52a298 0%, #daeeec 100%);
 }
-.temp{grid-area: temp;}
+.temp{
+    grid-area: temp;
+    background-color: #00e9ba;
+    background-image: linear-gradient(190deg, #bee900 0%, #d7d9cf 100%);
+}
+.time{
+    grid-area: time;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+    background-color: #00e9ba;
+    background-image: linear-gradient(190deg, #11e9e9 0%, #a3ece3 100%);
+}
 /**/
 
 
